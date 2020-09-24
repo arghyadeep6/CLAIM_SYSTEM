@@ -1,0 +1,65 @@
+﻿@model IEnumerable<memberportal.Models.memberclaim>
+
+@{
+    ViewData["Title"] = "View_Bills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>View_All_Claims</h1>
+
+<p>
+    <a asp-action="Submit_Claim">Submit_new_claim</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.memberid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.claimid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.billedamount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.claimedamount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.benefitid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.claimstatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.memberid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.claimid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.billedamount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.claimedamount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.benefitid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.claimstatus)
+                </td>
+                <td>
+                    @Html.ActionLink("View Claim Status", "Edit", new { id = item.memberid })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

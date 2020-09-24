@@ -1,0 +1,60 @@
+﻿@model memberportal.Models.memberclaim
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Edit</h1>
+
+<h4>memberclaim</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="memberid" class="control-label"></label>
+                <input asp-for="memberid" class="form-control" readonly/>
+                <span asp-validation-for="memberid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="claimid" class="control-label"></label>
+                <input asp-for="claimid" class="form-control" readonly/>
+                <span asp-validation-for="claimid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="billedamount" class="control-label"></label>
+                <input asp-for="billedamount" class="form-control" readonly/>
+                <span asp-validation-for="billedamount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="claimedamount" class="control-label"></label>
+                <input asp-for="claimedamount" class="form-control" readonly/>
+                <span asp-validation-for="claimedamount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="benefitid" class="control-label"></label>
+                <input asp-for="benefitid" class="form-control" readonly/>
+                <span asp-validation-for="benefitid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="claimstatus" class="control-label"></label>
+                <input asp-for="claimstatus" class="form-control" readonly/>
+                <span asp-validation-for="claimstatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

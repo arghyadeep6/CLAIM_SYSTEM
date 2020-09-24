@@ -1,0 +1,55 @@
+﻿@model memberportal.Models.memberclaim
+
+@{
+    ViewData["Title"] = "claimstatus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>claimstatus</h1>
+
+<div>
+    <h4>memberclaim</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.memberid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.memberid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.claimid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.claimid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.billedamount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.billedamount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.claimedamount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.claimedamount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.benefitid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.benefitid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.claimstatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.claimstatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
